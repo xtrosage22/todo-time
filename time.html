@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./icons/webfonts/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo</title>
+    <link rel="stylesheet" href="styles.css">
+   <script>
+       setInterval(()=>{
+           const time = document.querySelector('#time')
+           let date = new Date();
+           let hours = date.getHours();
+           let minutes = date.getMinutes();
+           let seconds = date.getSeconds();
+           let day_night = "AM"
+           if(hours > 12){
+            day_night = "PM"
+               hours = hours - 12;
+           }
+           if(hours < 10){
+               hours = "0" + hours;
+           }
+
+           if(minutes < 10){
+               minutes = "0" + minutes;
+           }
+
+           if(seconds < 10){
+               seconds = "0" + seconds;
+           }
+
+           time.textContent = hours + ":" + minutes + ":" + seconds + " " + day_night;
+       });
+   </script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <div class="display">
+          <div id="time">12:00:00 PM</div>
+            </div>
+        </div>
+    </div>
+    <main class="section-todo">
+        <!-- start of section todo -->
+        <section class="wrapper">
+            
+            <div class="todo-container">
+
+                <div class="planner">
+                    <h1 class="planner-head">Prior-Planner</h1>
+                    <figure>
+                        <img src="./wedding-planner.png" alt="">
+                    </figure>
+                </div>
+
+                <div class="btn-container">
+                    <button class="add-btn">Add Activity</button>
+                </div>
+
+                <!-- popup section -->
+                <!-- start of popup -->
+                <div class="popup-wrapper">
+                    <div class="popup">
+                        <div class="popup-close">
+                            <i class="far fa-times-circle"></i>
+                        </div>
+                        <div class="popup-content">
+                            <div class="head-active">
+                                <h2 class="act-head">Add Activity</h2>
+                                <figure class="list-icon">
+                                    <img src="./list.png" alt="">
+                                </figure>
+                            </div>
+
+                            <form class="popup-form">
+                                <input type="text" name="activity" placeholder="Activity">
+                                <input type="date" name="date" placeholder="Due Date">
+
+                                <button class="add">Add</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of popup -->
+                <!-- end of popup -->
+            </div>
+        </section>
+        <!-- end of section todo -->
+        <!-- start of activity section -->
+        <section class="activity-section">
+            <div class="act-container">
+                <form class="">
+                    <input type="text" class="search-input" placeholder="Search Activity">
+                </form>
+            </div>
+
+
+            <table class="entries">
+
+                </div>
+            </table>
+        </section>
+    </main>
+
+</body>
+</html>
